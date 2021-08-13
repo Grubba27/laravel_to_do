@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\MensagemTesteMail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/tarefa', [App\Http\Controllers\TarefaController::class, 'index'])->name('tarefa');
+
+Route::get('/teste-email', function (){
+   return new MensagemTesteMail();
+});
